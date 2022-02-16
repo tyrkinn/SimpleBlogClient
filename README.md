@@ -22,6 +22,8 @@ Client for Simple blog
 
 **Linter:** [eslint](https://eslint.org/)
 
+**Icons:** [react-icons](https://react-icons.github.io/react-icons/)
+
 ## Routes
 
 ### Home page
