@@ -1,12 +1,9 @@
-import {ColorModeScript} from '@chakra-ui/react';
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import {App} from './App';
+import {withWrappers} from './hoc/withWrappers';
 
 ReactDOM.render(
-    <React.StrictMode>
-      <ColorModeScript />
-      <App />
-    </React.StrictMode>,
+    withWrappers(<App/>),
     document.getElementById('root'),
 );
