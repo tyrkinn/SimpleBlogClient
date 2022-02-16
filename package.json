@@ -1,5 +1,17 @@
 {
-  "name": "client",
+  "name": "simple-blog-client",
+  "author": {
+    "name": "Nikita Tyrkin",
+    "email": "tyrkinn@pm.me",
+    "url": "https://github.com/tyrkinn"
+  },
+  "description": "React frontend for Simple Blog",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tyrkinn/SimpleBlogClient.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/tyrkinn/SimpleBlogClient#readme",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
