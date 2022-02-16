@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Center, ChakraProvider, Text, theme, VStack,} from '@chakra-ui/react';
+import {Center, ChakraProvider, Text, theme, VStack} from '@chakra-ui/react';
 import {ColorModeSwitcher} from './components/shared/ColorModeSwitcher';
 
 export const App = () => (
@@ -11,4 +11,4 @@ export const App = () => (
       </VStack>
     </Center>
   </ChakraProvider>
-)
+);
