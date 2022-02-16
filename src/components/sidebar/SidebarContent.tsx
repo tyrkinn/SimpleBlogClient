@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import {IconType} from 'react-icons';
-import {NavItem} from './NavItem';
+import {NavItem} from 'components/sidebar/NavItem';
 
 
 export interface LinkItemProps {

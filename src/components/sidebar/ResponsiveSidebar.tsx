@@ -1,4 +1,4 @@
-import {LinkItemProps, SidebarContent} from './SidebarContent';
+import {LinkItemProps, SidebarContent} from 'components/sidebar/SidebarContent';
 import {Drawer, DrawerContent} from '@chakra-ui/react';
 import React, {Fragment} from 'react';
 

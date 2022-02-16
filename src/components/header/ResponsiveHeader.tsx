@@ -9,9 +9,9 @@ import {
 } from '@chakra-ui/react';
 import {FiMenu} from 'react-icons/fi';
 import React from 'react';
-import {User} from '../../types/User';
-import {HeaderUserMenu} from './HeaderUserMenu';
-import {HeaderUnregisteredMenu} from './HeaderUnregisteredMenu';
+import {User} from 'types/User';
+import {HeaderUserMenu} from 'components/header/HeaderUserMenu';
+import {HeaderUnregisteredMenu} from 'components/header/HeaderUnregisteredMenu';
 
 export interface ResponsiveHeaderProps extends FlexProps {
   onOpen: () => void;
