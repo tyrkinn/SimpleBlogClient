@@ -19,6 +19,9 @@ Client for Simple blog
 **Testing:** [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 **Api requests:** [axios](https://axios-http.com/docs/intro), [react-query](https://react-query.tanstack.com/)
+
+**Linter:** [eslint](https://eslint.org/)
+
 ## Routes
 
 ### Home page
