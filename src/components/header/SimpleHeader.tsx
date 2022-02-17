@@ -2,17 +2,17 @@ import React from 'react';
 import {
   Box,
   Divider,
-  Flex, HStack, Image,
+  Flex,
+  HStack,
   Stack,
-  Text, useColorModeValue,
+  Text,
 } from '@chakra-ui/react';
 import {ColorModeSwitcher} from 'components/shared/ColorModeSwitcher';
 import {useAtom} from 'jotai';
-import logo from 'assets/images/oxygen.png';
-import logoWhite from 'assets/images/oxygen-white.png';
 import {authAtom} from 'store';
 import {UserMenu} from './UserMenu';
 import {AuthButtons} from './AuthButtons';
+import {Logo} from '../shared/Logo';
 
 
 export const SimpleHeader: React.FC = () => {
@@ -22,10 +22,7 @@ export const SimpleHeader: React.FC = () => {
       <Box bg={'transparent'} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack>
-            <Image
-              src={useColorModeValue(logo, logoWhite) as string}
-              width={30}
-            />
+            <Logo width={30} />
             <Text>Lambda</Text>
             <Divider
               borderColor={'gray.500'}
