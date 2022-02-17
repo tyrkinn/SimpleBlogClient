@@ -21,8 +21,7 @@ export const AuthButtons = () => {
         display={{base: 'none', md: 'inline-flex'}}
         fontSize={'sm'}
         fontWeight={600}
-        color={'white'}
-        bg={'pink.400'}
+        colorScheme={'purple'}
         href={'#'}
         _hover={{
           bg: 'pink.300',
