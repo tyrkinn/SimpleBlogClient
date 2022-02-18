@@ -19,6 +19,7 @@ plugins:
 rules:
   react/prop-types: off
   require-jsdoc: off
+  new-cap: off
 settings:
   react:
     version: detect
