@@ -1,9 +1,9 @@
 import {atom} from 'jotai';
-import {User} from '../types/user.interface';
+import {IUser} from '../types/user.interface';
 
 export interface Authorized {
   isAuthorized: true,
-  user: User,
+  user: IUser,
 }
 
 export interface NotAuthorized {

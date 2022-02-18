@@ -1,10 +1,10 @@
-import {User} from './user.interface';
+import {IUser} from './user.interface';
 
-export interface Post {
+export interface IPost {
   id?: number;
   title: string;
   markdownBody: string;
   imageLink: string;
-  createdBy: User;
-  createdAt: Date;
+  createdBy: IUser;
+  createdAt: string;
 }

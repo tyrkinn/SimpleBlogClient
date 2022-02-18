@@ -1,8 +1,8 @@
-import {User} from './user.interface';
+import {IUser} from './user.interface';
 
-export interface Comment {
+export interface IComment {
   id?: number;
   markdownBody: string;
-  author: User;
+  author: IUser;
   createdAt: string;
 }

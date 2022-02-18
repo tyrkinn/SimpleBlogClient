@@ -1,4 +1,4 @@
-import {User} from '../../types/user.interface';
+import {IUser} from '../../types/user.interface';
 import React from 'react';
 import {
   Avatar,
@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 
 export interface UserMenuProps {
-  user: User;
+  user: IUser;
 }
 
 export const UserMenu: React.FC<UserMenuProps> = ({user}) => {
