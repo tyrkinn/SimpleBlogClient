@@ -7,12 +7,12 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import {ColorModeSwitcher} from 'components/shared/ColorModeSwitcher';
+import {ColorModeSwitcher} from 'components/shared/color-mode-switcher';
 import {useAtom} from 'jotai';
 import {authAtom} from 'store';
-import {UserMenu} from './UserMenu';
-import {AuthButtons} from './AuthButtons';
-import {Logo} from '../shared/Logo';
+import {UserMenu} from './user-menu';
+import {AuthButtons} from './auth-buttons';
+import {Logo} from '../shared/logo';
 
 
 export const SimpleHeader: React.FC = () => {

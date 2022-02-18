@@ -1,19 +1,22 @@
 import React from 'react';
-import {PasswordField} from './PasswordFIeld';
 import {
   Box,
-  Button, Container,
-  FormControl, FormLabel,
+  Button,
+  Container,
+  FormControl,
+  FormLabel,
   Heading,
-  HStack, Input,
+  HStack,
+  Input,
   Stack,
   Text,
   useBreakpointValue,
   useColorModeValue,
 } from '@chakra-ui/react';
-import {Logo} from '../shared/Logo';
+import {Logo} from '../shared/logo';
+import {PasswordField} from './password-field';
 
-export const RegisterForm = () => {
+export const LoginForm = () => {
   return (
     <Container maxW="lg" py={{base: '12', md: '24'}} px={{base: '0', sm: '8'}}>
       <Stack spacing="8">
@@ -21,12 +24,12 @@ export const RegisterForm = () => {
           <Logo width={'8rem'}/>
           <Stack spacing={{base: '2', md: '3'}} textAlign="center">
             <Heading size={useBreakpointValue({base: 'xs', md: 'sm'})}>
-              Register new account
+              Log in to your account
             </Heading>
             <HStack spacing="1" justify="center">
-              <Text color="muted">Already registered?</Text>
+              <Text color="muted">Don&apos;t have an account?</Text>
               <Button variant="link" colorScheme="purple">
-                Sign in
+                Sign up
               </Button>
             </HStack>
           </Stack>
@@ -40,24 +43,9 @@ export const RegisterForm = () => {
         >
           <Stack spacing="10">
             <Stack spacing="5">
-
-              <HStack>
-                <Box>
-                  <FormControl isRequired >
-                    <FormLabel htmlFor='first_name'>First name</FormLabel>
-                    <Input id="first_name" type="text" />
-                  </FormControl>
-                </Box>
-                <Box>
-                  <FormControl isRequired >
-                    <FormLabel htmlFor='last_name'>Last name</FormLabel>
-                    <Input id="last_name" type="text" />
-                  </FormControl>
-                </Box>
-              </HStack>
-              <FormControl isRequired >
-                <FormLabel htmlFor='username'>Username</FormLabel>
-                <Input id='username' type="text" />
+              <FormControl>
+                <FormLabel htmlFor="email">Email</FormLabel>
+                <Input id="email" type="email" />
               </FormControl>
               <PasswordField />
             </Stack>

@@ -1,4 +1,4 @@
-import {User} from '../../types/User';
+import {User} from '../../types/user.interface';
 import React from 'react';
 import {
   Avatar,
