@@ -26,6 +26,22 @@ Client for Simple blog
 
 ## Routes
 
+### User
+
+```
+/profile
+```
+| Auth | Query Params | Description |
+| --- | --- | --- |
+| User\|Admin | No params | User profile page |
+
+```
+/profile/favorite
+```
+| Auth | Query Params | Description |
+| --- | --- | --- |
+| User\|Admin | No params | All post starred by current user |
+
 ### Home page
 
 ```
