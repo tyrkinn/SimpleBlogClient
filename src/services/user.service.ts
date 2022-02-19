@@ -13,7 +13,7 @@ export interface IUserService {
   unstarPost(postId: number, token: string): Promise<IPost | ServerError>;
 }
 
-export class UserService implements IUserService {
+class UserService implements IUserService {
   async login(user: LoginUserDto): Promise<TokenResponse | ServerError> {
     try {
       const response = await client.post<TokenResponse>('/login', user);
@@ -64,3 +64,5 @@ export class UserService implements IUserService {
     }
   }
 }
+
+export const userService = new UserService();
