@@ -80,7 +80,7 @@ Client for Simple blog
 ```
 | Auth | Query Params | Description |
 | --- | --- | --- |
-| User \| Admin | `?page: Integer` | List of shortened block posts with pagination |
+| - | `?page: Integer` | List of shortened block posts with pagination |
 
 ```
 /posts/:slug
