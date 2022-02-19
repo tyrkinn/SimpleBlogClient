@@ -36,12 +36,12 @@ class PostService implements IPostService {
 
   async create(model: IPost, token: string): Promise<ServerError | IPost> {
     try {
-      const resonse = await client.post<IPost>('/posts', model, {
+      const response = await client.post<IPost>('/posts', model, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
       });
-      return resonse.data;
+      return response.data;
     } catch (e) {
       return processServiceError(e);
     }
