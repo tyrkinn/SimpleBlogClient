@@ -20,6 +20,7 @@ rules:
   react/prop-types: off
   require-jsdoc: off
   new-cap: off
+  max-len: off
 settings:
   react:
     version: detect
