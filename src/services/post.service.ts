@@ -75,13 +75,13 @@ class PostService implements IPostService {
 
   async deleteComment(postId: number, commentId: number, token: string): Promise<IComment | ServerError> {
     try {
-      const resonse = await client
+      const response = await client
           .delete<IComment>(`/posts/${postId}/comments/${commentId}`, {
             headers: {
               'Authorization': `Bearer ${token}`,
             },
           });
-      return resonse.data;
+      return response.data;
     } catch (e) {
       return processServiceError(e);
     }
