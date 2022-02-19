@@ -1,8 +1,8 @@
 import {IPost} from 'types/post.interface';
 import {IComment} from 'types/comment.interface';
+import {ServerError} from 'types/server-error.interface';
+import {processServiceError} from 'utils/processServiceError';
 import {client} from './axios-client';
-import {ServerError} from '../types/server-error.interface';
-import {processServiceError} from '../utils/processServiceError';
 
 export interface IPostService{
   addComment(postId: number, comment: IComment, token: string): Promise<IComment | ServerError>;
