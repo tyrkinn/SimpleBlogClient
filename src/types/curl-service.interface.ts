@@ -1,7 +1,9 @@
+import {ServerError} from './server-error.interface';
+
 export interface ICurlService<T> {
-  getAll(): T[];
-  getOne(id: number): T;
-  create(model: T): void;
-  update(id: number): void;
-  delete(id: number): void;
+  getAll(): Promise<T[] | ServerError>;
+  getOne(id: number): Promise<T | ServerError>;
+  create(model: T): Promise<T | ServerError>;
+  update(id: number): Promise<T | ServerError>;
+  delete(id: number): Promise<T | ServerError>;
 }
