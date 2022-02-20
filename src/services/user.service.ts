@@ -5,12 +5,16 @@ import {LoginUserDto} from 'types/dto/login-user.dto';
 import {TokenResponse} from 'types/token-response.interface';
 import {processServiceError} from 'utils/processServiceError';
 import {client} from './axios-client';
+import {IUser} from '../types/user.interface';
+import {UpdateUserDto} from '../types/dto/update-user.dto';
 
 export interface IUserService {
   login(user: LoginUserDto): Promise<TokenResponse | ServerError>;
   register(user: RegisterUserDto): Promise<TokenResponse | ServerError>;
   starPost(postId: number, token: string): Promise<IPost | ServerError>;
   unstarPost(postId: number, token: string): Promise<IPost | ServerError>;
+  get(id: number): Promise<IUser | ServerError>;
+  update(user: UpdateUserDto, token: string): Promise<IUser | ServerError>;
 }
 
 class UserService implements IUserService {
@@ -58,6 +62,28 @@ class UserService implements IUserService {
             },
           },
       );
+      return response.data;
+    } catch (e) {
+      return processServiceError(e);
+    }
+  }
+
+  async get(id: number): Promise<IUser | ServerError> {
+    try {
+      const response = await client.get<IUser>(`users/${id}`);
+      return response.data;
+    } catch (e) {
+      return processServiceError(e);
+    }
+  }
+
+  async update(user: UpdateUserDto, token: string): Promise<IUser | ServerError> {
+    try {
+      const response = await client.put<IUser>('/users', user, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
       return response.data;
     } catch (e) {
       return processServiceError(e);
