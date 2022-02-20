@@ -15,6 +15,7 @@ export interface IUserService {
   unstarPost(postId: number, token: string): Promise<IPost | ServerError>;
   get(id: number): Promise<IUser | ServerError>;
   update(user: UpdateUserDto, token: string): Promise<IUser | ServerError>;
+  uploadAvatar(avatar: File, token: string): Promise<IUser | ServerError>;
 }
 
 class UserService implements IUserService {
@@ -80,6 +81,21 @@ class UserService implements IUserService {
   async update(user: UpdateUserDto, token: string): Promise<IUser | ServerError> {
     try {
       const response = await client.put<IUser>('/users', user, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      return response.data;
+    } catch (e) {
+      return processServiceError(e);
+    }
+  }
+
+  async uploadAvatar(avatar: File, token: string): Promise<IUser | ServerError> {
+    try {
+      const formData = new FormData();
+      formData.append('image', avatar);
+      const response = await client.post<IUser>('/user/avatar', formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
