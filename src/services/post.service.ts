@@ -10,7 +10,7 @@ export interface IPostService{
   getAll(): Promise<IPost[] | ServerError>;
   getOne(id: number): Promise<IPost | ServerError>;
   create(model: IPost, token: string): Promise<IPost | ServerError>;
-  update(id: number, post: IPost, token: string): Promise<IPost | ServerError>;
+  update(post: IPost, token: string): Promise<IPost | ServerError>;
   delete(id: number, token: string): Promise<IPost | ServerError>;
 }
 
