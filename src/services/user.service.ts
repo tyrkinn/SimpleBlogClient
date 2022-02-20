@@ -95,7 +95,7 @@ class UserService implements IUserService {
     try {
       const formData = new FormData();
       formData.append('image', avatar);
-      const response = await client.post<IUser>('/user/avatar', formData, {
+      const response = await client.post<IUser>('/users/avatar', formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
