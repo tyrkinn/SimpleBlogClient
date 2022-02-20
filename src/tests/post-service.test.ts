@@ -70,4 +70,10 @@ describe('Get one', () => {
     const response = await postService.getOne(1);
     expect(response).toEqual(post);
   });
+
+  test('Should return client error', async () => {
+    mockClient.get.mockRejectedValueOnce(Error());
+    const response = await postService.getOne(1);
+    expect(response).toEqual({error: {message: 'Something went wrong!'}});
+  });
 });
