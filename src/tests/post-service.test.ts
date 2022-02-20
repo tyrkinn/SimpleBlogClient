@@ -47,7 +47,7 @@ describe('Get all', () => {
       name: 'Error',
       message: 'Error',
       response: {
-        data: {message: 'Server error'},
+        data: {error: {message: 'Server error'}},
         status: 404,
         statusText: 'Not found',
         headers: {},
@@ -56,6 +56,6 @@ describe('Get all', () => {
     };
     mockClient.get.mockRejectedValueOnce(error);
     const response = await postService.getAll();
-    expect(response).toEqual({message: 'Server error'});
+    expect(response).toEqual({error: {message: 'Server error'}});
   });
 });
