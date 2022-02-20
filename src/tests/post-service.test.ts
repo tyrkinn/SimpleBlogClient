@@ -20,6 +20,21 @@ const mockPost: IPost = {
   title: 'Post',
 };
 
+const mockAxiosError = {
+  config: {},
+  isAxiosError: true,
+  toJSON: () => ({}),
+  name: 'Error',
+  message: 'Error',
+  response: {
+    data: {error: {message: 'Server error'}},
+    status: 404,
+    statusText: 'Not found',
+    headers: {},
+    config: {},
+  },
+};
+
 describe('Get all', () => {
   test('Should return posts', async () => {
     const posts = [
@@ -43,21 +58,7 @@ describe('Get all', () => {
   });
 
   test('Should return server error message', async () => {
-    const error: AxiosError = {
-      config: {},
-      isAxiosError: true,
-      toJSON: () => ({}),
-      name: 'Error',
-      message: 'Error',
-      response: {
-        data: {error: {message: 'Server error'}},
-        status: 404,
-        statusText: 'Not found',
-        headers: {},
-        config: {},
-      },
-    };
-    mockClient.get.mockRejectedValueOnce(error);
+    mockClient.get.mockRejectedValueOnce(mockAxiosError);
     const response = await postService.getAll();
     expect(response).toEqual({error: {message: 'Server error'}});
   });
