@@ -36,7 +36,7 @@ const mockAxiosError = {
 };
 
 describe('Get all', () => {
-  test('Should return posts', async () => {
+  test('Should return valid value', async () => {
     const posts = [
       mockPost, mockPost,
     ];
@@ -47,7 +47,7 @@ describe('Get all', () => {
     expect(result).toEqual(posts);
   });
 
-  test('Should return error message', async () => {
+  test('Should return client error', async () => {
     mockClient.get.mockRejectedValueOnce(Error());
     const result = await postService.getAll();
     expect(result).toEqual({
@@ -57,7 +57,7 @@ describe('Get all', () => {
     });
   });
 
-  test('Should return server error message', async () => {
+  test('Should return server axios error', async () => {
     mockClient.get.mockRejectedValueOnce(mockAxiosError);
     const response = await postService.getAll();
     expect(response).toEqual({error: {message: 'Server error'}});
