@@ -77,4 +77,10 @@ describe('Get one', () => {
     const response = await postService.getOne(1);
     expect(response).toEqual({error: {message: 'Something went wrong!'}});
   });
+
+  test('Should return server axios error', async () => {
+    mockClient.get.mockRejectedValueOnce(mockAxiosError);
+    const response = await postService.getOne(1);
+    expect(response).toEqual({error: {message: 'Server error'}});
+  });
 });
