@@ -88,7 +88,7 @@ class PostService implements IPostService {
   }
 
 
-  async update(id: number, post: IPost, token: string): Promise<ServerError | IPost> {
+  async update(post: IPost, token: string): Promise<ServerError | IPost> {
     try {
       const response = await client
           .put<IPost>(`/posts`, post, {
