@@ -1,26 +1,29 @@
 import {postService} from '../services/post.service';
 import {client} from 'services/axios-client';
 import axios, {AxiosError, AxiosResponse} from 'axios';
+import {IPost} from '../types/post.interface';
+import {IUser} from '../types/user.interface';
 
 jest.mock('../services/axios-client');
 const mockClient = client as jest.Mocked<typeof client>;
+const mockUser: IUser = {
+  fistName: 'Nikita',
+  lastName: 'Tyrkin',
+  role: 'User',
+  userName: 'tyrkinn',
+};
+const mockPost: IPost = {
+  createdAt: Date.now().toString(),
+  createdBy: mockUser,
+  imageLink: 'https://random-image-link.com',
+  markdownBody: '# Post',
+  title: 'Post',
+};
 
 describe('Get all', () => {
   test('Should return posts', async () => {
     const posts = [
-      {
-        id: 1,
-        imageLink: 'https://google.com',
-        markdownBody: '# Post',
-        createdAt: Date.now().toString(),
-        title: 'Post',
-        createdBy: {
-          fistName: 'Nikita',
-          lastName: 'Tyrkin',
-          userName: 'tyrkinn',
-          role: 'User',
-        },
-      },
+      mockPost, mockPost,
     ];
 
     mockClient.get.mockResolvedValueOnce({data: posts});
@@ -57,5 +60,14 @@ describe('Get all', () => {
     mockClient.get.mockRejectedValueOnce(error);
     const response = await postService.getAll();
     expect(response).toEqual({error: {message: 'Server error'}});
+  });
+});
+
+describe('Get one', () => {
+  test('Should return valid value', async () => {
+    const post: IPost = mockPost;
+    mockClient.get.mockResolvedValueOnce({data: post});
+    const response = await postService.getOne(1);
+    expect(response).toEqual(post);
   });
 });
