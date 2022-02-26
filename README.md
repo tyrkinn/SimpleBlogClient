@@ -26,6 +26,8 @@ Client for Simple blog
 
 **Icons:** [react-icons](https://react-icons.github.io/react-icons/)
 
+**Mock backend:** [supabase](https://supabase.com/)
+
 ## Routes
 
 ### User
