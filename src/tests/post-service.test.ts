@@ -1,9 +1,9 @@
-import {postService} from 'services/post.service';
-import {client} from 'services/axios-client';
+import {postService} from 'services';
+import {axiosClient} from 'services';
 import {IPost} from 'types';
 
 jest.mock('../services/axios-client');
-const mockClient = client as jest.Mocked<typeof client>;
+const mockClient = axiosClient as jest.Mocked<typeof axiosClient>;
 const mockPost: IPost = {
   createdAt: Date.now().toString(),
   imageLink: 'https://random-image-link.com',
