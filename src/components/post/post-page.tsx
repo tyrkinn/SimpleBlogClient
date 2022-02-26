@@ -1,5 +1,5 @@
 import React from 'react';
-import {IPost} from '../../types/post.interface';
+import {IPost} from 'types';
 import {Box, Heading, Image, Stack} from '@chakra-ui/react';
 import ReactMarkdown from 'react-markdown';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';

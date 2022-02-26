@@ -7,7 +7,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import {ColorModeSwitcher} from 'components/shared/color-mode-switcher';
+import {ColorModeSwitcher} from '../shared/color-mode-switcher';
 import {useAtom} from 'jotai';
 import {authAtom} from 'store';
 import {UserMenu} from './user-menu';

@@ -1,6 +1,6 @@
-import {IPost} from 'types/post.interface';
-import {IComment} from 'types/comment.interface';
-import {ServerError} from 'types/server-error.interface';
+import {IPost} from 'types';
+import {IComment} from 'types';
+import {ServerError} from 'types';
 import {processServiceError} from 'utils/processServiceError';
 import {client} from './axios-client';
 

@@ -1,12 +1,12 @@
-import {IPost} from 'types/post.interface';
-import {ServerError} from 'types/server-error.interface';
-import {RegisterUserDto} from 'types/dto/register-user.dto';
-import {LoginUserDto} from 'types/dto/login-user.dto';
-import {TokenResponse} from 'types/token-response.interface';
+import {IPost} from 'types';
+import {ServerError} from 'types';
+import {RegisterUserDto} from 'types/dto';
+import {LoginUserDto} from 'types/dto';
+import {TokenResponse} from 'types';
 import {processServiceError} from 'utils/processServiceError';
 import {client} from './axios-client';
-import {IUser} from '../types/user.interface';
-import {UpdateUserDto} from '../types/dto/update-user.dto';
+import {IUser} from 'types';
+import {UpdateUserDto} from 'types/dto';
 
 export interface IUserService {
   login(user: LoginUserDto): Promise<TokenResponse | ServerError>;

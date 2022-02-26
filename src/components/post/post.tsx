@@ -1,5 +1,5 @@
 import React from 'react';
-import {IPost} from '../../types/post.interface';
+import {IPost} from 'types';
 import {Box, Flex, Heading, Icon, Image, Link, Text} from '@chakra-ui/react';
 import {FaCalendarAlt, FaTags} from 'react-icons/all';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';

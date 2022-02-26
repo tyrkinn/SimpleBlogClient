@@ -1,5 +1,5 @@
 import axios, {AxiosError} from 'axios';
-import {ServerError} from 'types/server-error.interface';
+import {ServerError} from 'types';
 
 export const processServiceError = (error: unknown) => {
   if (axios.isAxiosError(error)) {
