@@ -4,7 +4,7 @@ import {postsAtom} from 'store';
 import {useAtomValue} from 'jotai';
 import {Post} from './post';
 
-export const PostListProps: React.FC = () => {
+export const PostList: React.FC = () => {
   const posts = useAtomValue(postsAtom);
   return (
     <SimpleGrid columns={{base: 1, md: 3}} gridGap={7}>
