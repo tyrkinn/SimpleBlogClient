@@ -1,23 +1,15 @@
 import {postService} from '../services/post.service';
 import {client} from 'services/axios-client';
-import axios, {AxiosError, AxiosResponse} from 'axios';
 import {IPost} from '../types/post.interface';
-import {IUser} from '../types/user.interface';
 
 jest.mock('../services/axios-client');
 const mockClient = client as jest.Mocked<typeof client>;
-const mockUser: IUser = {
-  fistName: 'Nikita',
-  lastName: 'Tyrkin',
-  role: 'User',
-  userName: 'tyrkinn',
-};
 const mockPost: IPost = {
   createdAt: Date.now().toString(),
-  createdBy: mockUser,
   imageLink: 'https://random-image-link.com',
   markdownBody: '# Post',
   title: 'Post',
+  tags: ['Js'],
 };
 
 const mockAxiosError = {
