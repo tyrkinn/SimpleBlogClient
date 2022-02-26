@@ -1,5 +1,4 @@
-import {postService} from 'services';
-import {axiosClient} from 'services';
+import {postService, axiosClient} from 'services';
 import {IPost} from 'types';
 
 jest.mock('../services/axios-client');
