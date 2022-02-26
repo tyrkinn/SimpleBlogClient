@@ -1,5 +1,6 @@
 import {atom} from 'jotai';
 import {IUser} from 'types/user.interface';
+import {IPost} from 'types';
 
 export interface Authorized {
   isAuthorized: true,
@@ -17,3 +18,5 @@ export const authAtom = atom<AuthAtomType>({
   isAuthorized: false,
   user: null,
 });
+
+export const postsAtom = atom<IPost[]>([]);
